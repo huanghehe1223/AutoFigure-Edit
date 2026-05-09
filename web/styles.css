@@ -489,6 +489,16 @@ input[type="checkbox"] {
   margin-top: 8px;
 }
 
+.hint a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hint a:hover {
+  text-decoration: underline;
+}
+
 .is-hidden {
   display: none !important;
 }

@@ -64,6 +64,7 @@
         image_model_hint: "Default is `gpt-image-2`. You can replace it with any compatible image model id.",
         api_key_label: "Primary API Key",
         api_key_hint: "Used by the selected SVG / reasoning provider. Reused for images when possible.",
+        bianxie_register_hint: 'Register at <a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>.',
         base_url_label: "Custom API URL",
         base_url_hint: "Required for Custom. Use the OpenAI-compatible /v1 root URL, not a specific endpoint path.",
         custom_url_required: "Custom API URL required",
@@ -124,6 +125,7 @@
         svg_model_hint: "Editable model id for SVG reconstruction.",
         api_key_label: "Primary API Key",
         api_key_hint: "Used only for the SVG / reasoning provider in import mode.",
+        bianxie_register_hint: 'Register at <a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>.',
         base_url_label: "Custom API URL",
         base_url_hint:
           "Required for Custom. Use the OpenAI-compatible /v1 root URL, not a specific endpoint path.",
@@ -375,6 +377,7 @@
         image_model_hint: "默认是 `gpt-image-2`。你也可以替换为任何兼容的图片模型 id。",
         api_key_label: "主 API Key",
         api_key_hint: "用于当前 SVG / 推理 provider；在可复用时也会用于图片路线。",
+        bianxie_register_hint: '注册链接：<a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>。',
         base_url_label: "自定义 API URL",
         base_url_hint: "Custom 必填。请填写兼容 OpenAI 的 /v1 根路径，不要填具体 endpoint。",
         custom_url_required: "需要填写自定义 API URL",
@@ -434,6 +437,7 @@
         svg_model_hint: "可自由填写用于 SVG 重建的模型 id。",
         api_key_label: "主 API Key",
         api_key_hint: "导入模式下只用于 SVG / 推理 provider。",
+        bianxie_register_hint: '注册链接：<a href="https://bianxieai.com/autofigure" target="_blank" rel="noopener noreferrer">bianxieai</a>。',
         base_url_label: "自定义 API URL",
         base_url_hint:
           "Custom 必填。请填写兼容 OpenAI 的 /v1 根路径，不要填具体 endpoint。",
@@ -783,6 +787,7 @@
     const imageApiKeyGroup = $("imageApiKeyGroup");
     const imageApiKeyInput = $("imageApiKey");
     const imageApiKeyHint = $("imageApiKeyHint");
+    const bianxieRegisterHint = $("bianxieRegisterHint");
     const imageBaseUrlGroup = $("imageBaseUrlGroup");
     const imageBaseUrlInput = $("imageBaseUrl");
     const imageBaseUrlHint = $("imageBaseUrlHint");
@@ -1122,6 +1127,9 @@
             ? t("input.image_base_url_hint_custom")
             : t("input.image_base_url_hint_default");
       }
+      if (bianxieRegisterHint) {
+        bianxieRegisterHint.hidden = provider !== "bianxie" && effectiveImageProvider !== "bianxie";
+      }
 
       updateRouteSummary();
       saveInputState();
@@ -1185,6 +1193,7 @@
       setText("imageModelHint", t("input.image_model_hint"));
       setText("apiKeyLabel", t("input.api_key_label"));
       setText("apiKeyHint", t("input.api_key_hint"));
+      setHTML("bianxieRegisterHint", t("input.bianxie_register_hint"));
       setText("baseUrlLabel", t("input.base_url_label"));
       setPlaceholder("baseUrl", CUSTOM_BASE_URL_PLACEHOLDER);
       setText("baseUrlHint", t("input.base_url_hint"));
@@ -1388,6 +1397,7 @@
     const providerButtons = $("importProviderButtons");
     const svgModelInput = $("importSvgModel");
     const apiKeyInput = $("importApiKey");
+    const bianxieRegisterHint = $("importBianxieRegisterHint");
     const baseUrlGroup = $("importBaseUrlGroup");
     const baseUrlInput = $("importBaseUrl");
     const samBackend = $("importSamBackend");
@@ -1540,6 +1550,9 @@
       if (baseUrlGroup) {
         baseUrlGroup.hidden = provider !== "custom";
       }
+      if (bianxieRegisterHint) {
+        bianxieRegisterHint.hidden = provider !== "bianxie";
+      }
       saveImportState();
     }
 
@@ -1591,6 +1604,7 @@
       setText("importSvgModelHint", t("importPage.svg_model_hint"));
       setText("importApiKeyLabel", t("importPage.api_key_label"));
       setText("importApiKeyHint", t("importPage.api_key_hint"));
+      setHTML("importBianxieRegisterHint", t("importPage.bianxie_register_hint"));
       setText("importBaseUrlLabel", t("importPage.base_url_label"));
       setPlaceholder("importBaseUrl", CUSTOM_BASE_URL_PLACEHOLDER);
       setText("importBaseUrlHint", t("importPage.base_url_hint"));
