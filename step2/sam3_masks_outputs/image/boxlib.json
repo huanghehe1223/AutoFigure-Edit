@@ -1,0 +1,76 @@
+{
+  "image_size": {
+    "width": 1565,
+    "height": 817
+  },
+  "prompts_used": [
+    "chest x-ray image",
+    "lock icon",
+    "neural network icon",
+    "gear icon",
+    "icon"
+  ],
+  "boxes": [
+    {
+      "id": 0,
+      "label": "<AF>01",
+      "x1": 13,
+      "y1": 243,
+      "x2": 216,
+      "y2": 446,
+      "score": 0.94140625,
+      "prompt": "chest x-ray image"
+    },
+    {
+      "id": 1,
+      "label": "<AF>02",
+      "x1": 1062,
+      "y1": 297,
+      "x2": 1155,
+      "y2": 435,
+      "score": 0.77734375,
+      "prompt": "neural network icon"
+    },
+    {
+      "id": 2,
+      "label": "<AF>03",
+      "x1": 1094,
+      "y1": 220,
+      "x2": 1118,
+      "y2": 246,
+      "score": 0.87109375,
+      "prompt": "gear icon"
+    },
+    {
+      "id": 3,
+      "label": "<AF>04",
+      "x1": 1123,
+      "y1": 194,
+      "x2": 1142,
+      "y2": 214,
+      "score": 0.8359375,
+      "prompt": "gear icon"
+    },
+    {
+      "id": 4,
+      "label": "<AF>05",
+      "x1": 1133,
+      "y1": 220,
+      "x2": 1153,
+      "y2": 239,
+      "score": 0.8359375,
+      "prompt": "gear icon"
+    },
+    {
+      "id": 5,
+      "label": "<AF>06",
+      "x1": 446,
+      "y1": 350,
+      "x2": 483,
+      "y2": 394,
+      "score": 0.953125,
+      "prompt": "lock icon"
+    }
+  ],
+  "no_icon_mode": false
+}

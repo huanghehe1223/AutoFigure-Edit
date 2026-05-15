@@ -1,0 +1,32 @@
+{
+  "image_size": {
+    "width": 1376,
+    "height": 768
+  },
+  "prompts_used": [
+    "document"
+  ],
+  "boxes": [
+    {
+      "id": 0,
+      "label": "<AF>01",
+      "x1": 569,
+      "y1": 283,
+      "x2": 698,
+      "y2": 449,
+      "score": 0.61328125,
+      "prompt": "document"
+    },
+    {
+      "id": 1,
+      "label": "<AF>02",
+      "x1": 672,
+      "y1": 297,
+      "x2": 802,
+      "y2": 462,
+      "score": 0.64453125,
+      "prompt": "document"
+    }
+  ],
+  "no_icon_mode": false
+}

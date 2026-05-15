@@ -1,0 +1,97 @@
+{
+  "image_size": {
+    "width": 1365,
+    "height": 768
+  },
+  "prompts_used": [
+    "student",
+    "robot",
+    "magnifier",
+    "computer",
+    "database",
+    "icon"
+  ],
+  "boxes": [
+    {
+      "id": 0,
+      "label": "<AF>01",
+      "x1": 1151,
+      "y1": 401,
+      "x2": 1207,
+      "y2": 457,
+      "score": 0.859375,
+      "prompt": "icon"
+    },
+    {
+      "id": 1,
+      "label": "<AF>02",
+      "x1": 640,
+      "y1": 657,
+      "x2": 717,
+      "y2": 718,
+      "score": 0.890625,
+      "prompt": "icon"
+    },
+    {
+      "id": 2,
+      "label": "<AF>03",
+      "x1": 615,
+      "y1": 423,
+      "x2": 744,
+      "y2": 502,
+      "score": 0.5859375,
+      "prompt": "icon"
+    },
+    {
+      "id": 3,
+      "label": "<AF>04",
+      "x1": 623,
+      "y1": 312,
+      "x2": 736,
+      "y2": 422,
+      "score": 0.5859375,
+      "prompt": "icon"
+    },
+    {
+      "id": 4,
+      "label": "<AF>05",
+      "x1": 1005,
+      "y1": 404,
+      "x2": 1073,
+      "y2": 455,
+      "score": 0.72265625,
+      "prompt": "icon"
+    },
+    {
+      "id": 5,
+      "label": "<AF>06",
+      "x1": 576,
+      "y1": 126,
+      "x2": 635,
+      "y2": 206,
+      "score": 0.89453125,
+      "prompt": "icon"
+    },
+    {
+      "id": 6,
+      "label": "<AF>07",
+      "x1": 1082,
+      "y1": 401,
+      "x2": 1141,
+      "y2": 456,
+      "score": 0.81640625,
+      "prompt": "icon"
+    },
+    {
+      "id": 7,
+      "label": "<AF>08",
+      "x1": 173,
+      "y1": 401,
+      "x2": 270,
+      "y2": 460,
+      "score": 0.81640625,
+      "prompt": "magnifier"
+    }
+  ],
+  "no_icon_mode": false
+}
