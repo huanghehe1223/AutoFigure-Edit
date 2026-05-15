@@ -22,8 +22,8 @@ from PIL import Image, ImageDraw, ImageFont
 
 # ---- Hardcoded configuration ----
 IMAGE_PATH = "step2/sample_images/Validation_Framework_Medical_Vision_202605151644.jpeg"
-OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}_just_icon"
-TEXT_PROMPTS = "icon"
+OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}"
+TEXT_PROMPTS = "document,eye mask,monitor,x-ray,clock,gear,scale,brain,icon"
 MIN_SCORE = 0.5
 MERGE_THRESHOLD = 0.01
 # Size filter: drop boxes too small relative to the image size.

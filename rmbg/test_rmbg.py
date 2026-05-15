@@ -42,7 +42,7 @@ def remove_background(
         trust_remote_code=True,
     ).eval().to(device)
 
-    image_size = (1024, 1024)
+    image_size = (512, 512)
 
     transform_image = transforms.Compose([
         transforms.Resize(image_size),
