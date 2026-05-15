@@ -4,27 +4,22 @@
     "height": 768
   },
   "prompts_used": [
-    "student",
     "robot",
+    "document",
     "magnifier",
-    "computer",
+    "person",
+    "cap",
     "database",
+    "server",
+    "globe",
+    "monitor",
+    "network",
     "icon"
   ],
   "boxes": [
     {
       "id": 0,
       "label": "<AF>01",
-      "x1": 1151,
-      "y1": 401,
-      "x2": 1207,
-      "y2": 457,
-      "score": 0.859375,
-      "prompt": "icon"
-    },
-    {
-      "id": 1,
-      "label": "<AF>02",
       "x1": 640,
       "y1": 657,
       "x2": 717,
@@ -33,8 +28,8 @@
       "prompt": "icon"
     },
     {
-      "id": 2,
-      "label": "<AF>03",
+      "id": 1,
+      "label": "<AF>02",
       "x1": 615,
       "y1": 423,
       "x2": 744,
@@ -43,18 +38,8 @@
       "prompt": "icon"
     },
     {
-      "id": 3,
-      "label": "<AF>04",
-      "x1": 623,
-      "y1": 312,
-      "x2": 736,
-      "y2": 422,
-      "score": 0.5859375,
-      "prompt": "icon"
-    },
-    {
-      "id": 4,
-      "label": "<AF>05",
+      "id": 2,
+      "label": "<AF>03",
       "x1": 1005,
       "y1": 404,
       "x2": 1073,
@@ -63,13 +48,33 @@
       "prompt": "icon"
     },
     {
-      "id": 5,
-      "label": "<AF>06",
+      "id": 3,
+      "label": "<AF>04",
       "x1": 576,
       "y1": 126,
       "x2": 635,
       "y2": 206,
       "score": 0.89453125,
+      "prompt": "icon"
+    },
+    {
+      "id": 4,
+      "label": "<AF>05",
+      "x1": 622,
+      "y1": 312,
+      "x2": 737,
+      "y2": 422,
+      "score": 0.859375,
+      "prompt": "cap"
+    },
+    {
+      "id": 5,
+      "label": "<AF>06",
+      "x1": 1151,
+      "y1": 401,
+      "x2": 1207,
+      "y2": 457,
+      "score": 0.859375,
       "prompt": "icon"
     },
     {

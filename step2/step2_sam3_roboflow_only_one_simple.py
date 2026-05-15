@@ -21,11 +21,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 # ---- Hardcoded configuration ----
-IMAGE_PATH = "step2/sample_images/1.ai_tools.drawio.png"
-OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}"
-TEXT_PROMPTS = "student,robot,magnifier,computer,database,icon"
+IMAGE_PATH = "step2/sample_images/Validation_Framework_Medical_Vision_202605151644.jpeg"
+OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}_just_icon"
+TEXT_PROMPTS = "icon"
 MIN_SCORE = 0.5
-MERGE_THRESHOLD = 0.9
+MERGE_THRESHOLD = 0.01
 # Size filter: drop boxes too small relative to the image size.
 MIN_WIDTH_RATIO = 0.02
 MIN_HEIGHT_RATIO = 0.02
