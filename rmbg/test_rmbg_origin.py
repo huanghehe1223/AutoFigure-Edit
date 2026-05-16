@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Dict, Tuple
 
 import torch
 from PIL import Image
@@ -12,34 +11,8 @@ from transformers import AutoModelForImageSegmentation
 # =========================
 MODEL_DIR = "rmbg/models/RMBG-2.0"
 
-INPUT_IMAGE_PATH = "rmbg/sample_images/Snipaste_2026-05-15_17-36-13.jpg"
+INPUT_IMAGE_PATH = "step3/icons_output/image/icon_AF03.png"
 OUTPUT_IMAGE_PATH = f"rmbg/rmbg_outputs/{Path(INPUT_IMAGE_PATH).stem}_nobg.png"
-
-
-def letterbox_image(
-    image: Image.Image,
-    target_size: Tuple[int, int],
-) -> Tuple[Image.Image, Dict[str, object]]:
-    target_w, target_h = target_size
-    orig_w, orig_h = image.size
-
-    scale = min(target_w / orig_w, target_h / orig_h)
-    resized_w = max(1, int(round(orig_w * scale)))
-    resized_h = max(1, int(round(orig_h * scale)))
-
-    resized = image.resize((resized_w, resized_h), resample=Image.LANCZOS)
-    padded = Image.new("RGB", (target_w, target_h), (0, 0, 0))
-    pad_left = (target_w - resized_w) // 2
-    pad_top = (target_h - resized_h) // 2
-    padded.paste(resized, (pad_left, pad_top))
-
-    meta = {
-        "pad_left": pad_left,
-        "pad_top": pad_top,
-        "resized_size": (resized_w, resized_h),
-        "original_size": (orig_w, orig_h),
-    }
-    return padded, meta
 
 
 def remove_background(
@@ -69,9 +42,10 @@ def remove_background(
         trust_remote_code=True,
     ).eval().to(device)
 
-    image_size = (512, 512)
+    image_size = (1024, 1024)
 
     transform_image = transforms.Compose([
+        transforms.Resize(image_size),
         transforms.ToTensor(),
         transforms.Normalize(
             [0.485, 0.456, 0.406],
@@ -80,19 +54,14 @@ def remove_background(
     ])
 
     image = Image.open(input_image_path).convert("RGB")
-    padded_image, pad_meta = letterbox_image(image, image_size)
-    input_tensor = transform_image(padded_image).unsqueeze(0).to(device)
+    input_tensor = transform_image(image).unsqueeze(0).to(device)
 
     with torch.no_grad():
         pred = model(input_tensor)[-1].sigmoid().cpu()
 
     mask = pred[0].squeeze()
     mask_pil = transforms.ToPILImage()(mask)
-    pad_left = pad_meta["pad_left"]
-    pad_top = pad_meta["pad_top"]
-    resized_w, resized_h = pad_meta["resized_size"]
-    mask_pil = mask_pil.crop((pad_left, pad_top, pad_left + resized_w, pad_top + resized_h))
-    mask_pil = mask_pil.resize(image.size, resample=Image.BILINEAR)
+    mask_pil = mask_pil.resize(image.size)
 
     output = image.copy()
     output.putalpha(mask_pil)

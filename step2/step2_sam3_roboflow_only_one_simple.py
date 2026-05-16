@@ -21,9 +21,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 # ---- Hardcoded configuration ----
-IMAGE_PATH = "step2/sample_images/Validation_Framework_Medical_Vision_202605151644.jpeg"
+IMAGE_PATH = "step2/sample_images/Pneumothorax_segmentation_module…_202605161949.png"
 OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}"
-TEXT_PROMPTS = "document,eye mask,monitor,x-ray,clock,gear,scale,brain,icon"
+TEXT_PROMPTS = "x-ray,lock,mask,icon"
 MIN_SCORE = 0.5
 MERGE_THRESHOLD = 0.01
 # Size filter: drop boxes too small relative to the image size.
@@ -429,6 +429,8 @@ def run() -> None:
         updated = box.copy()
         updated["id"] = idx
         updated["label"] = f"<AF>{idx + 1:02d}"
+        updated["width"] = updated["x2"] - updated["x1"]
+        updated["height"] = updated["y2"] - updated["y1"]
         renumbered_boxes.append(updated)
     valid_boxes = renumbered_boxes
 

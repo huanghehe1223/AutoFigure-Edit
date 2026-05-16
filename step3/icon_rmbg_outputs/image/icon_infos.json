@@ -1,0 +1,71 @@
+[
+  {
+    "id": 0,
+    "label": "<AF>01",
+    "label_clean": "AF01",
+    "x1": 13,
+    "y1": 243,
+    "x2": 216,
+    "y2": 446,
+    "width": 203,
+    "height": 203,
+    "crop_path": "step3/icons_output/image/icon_AF01.png",
+    "nobg_path": "step3/icon_rmbg_outputs/image/icon_AF01_nobg.png",
+    "original_size": [
+      203,
+      203
+    ],
+    "resized_size": [
+      512,
+      512
+    ],
+    "pad_left": 0,
+    "pad_top": 0
+  },
+  {
+    "id": 1,
+    "label": "<AF>02",
+    "label_clean": "AF02",
+    "x1": 1062,
+    "y1": 297,
+    "x2": 1155,
+    "y2": 435,
+    "width": 93,
+    "height": 138,
+    "crop_path": "step3/icons_output/image/icon_AF02.png",
+    "nobg_path": "step3/icon_rmbg_outputs/image/icon_AF02_nobg.png",
+    "original_size": [
+      93,
+      138
+    ],
+    "resized_size": [
+      345,
+      512
+    ],
+    "pad_left": 83,
+    "pad_top": 0
+  },
+  {
+    "id": 2,
+    "label": "<AF>03",
+    "label_clean": "AF03",
+    "x1": 446,
+    "y1": 350,
+    "x2": 483,
+    "y2": 394,
+    "width": 37,
+    "height": 44,
+    "crop_path": "step3/icons_output/image/icon_AF03.png",
+    "nobg_path": "step3/icon_rmbg_outputs/image/icon_AF03_nobg.png",
+    "original_size": [
+      37,
+      44
+    ],
+    "resized_size": [
+      431,
+      512
+    ],
+    "pad_left": 40,
+    "pad_top": 0
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "image_size": {
+    "width": 1376,
+    "height": 768
+  },
+  "prompts_used": [
+    "x-ray",
+    "lock",
+    "mask",
+    "icon"
+  ],
+  "boxes": [
+    {
+      "id": 0,
+      "label": "<AF>01",
+      "x1": 1225,
+      "y1": 212,
+      "x2": 1352,
+      "y2": 338,
+      "score": 0.56640625,
+      "prompt": "x-ray",
+      "width": 127,
+      "height": 126
+    },
+    {
+      "id": 1,
+      "label": "<AF>02",
+      "x1": 10,
+      "y1": 329,
+      "x2": 148,
+      "y2": 467,
+      "score": 0.796875,
+      "prompt": "x-ray",
+      "width": 138,
+      "height": 138
+    },
+    {
+      "id": 2,
+      "label": "<AF>03",
+      "x1": 252,
+      "y1": 335,
+      "x2": 302,
+      "y2": 397,
+      "score": 0.9453125,
+      "prompt": "lock",
+      "width": 50,
+      "height": 62
+    }
+  ],
+  "no_icon_mode": false
+}
