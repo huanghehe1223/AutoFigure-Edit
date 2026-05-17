@@ -21,9 +21,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 # ---- Hardcoded configuration ----
-IMAGE_PATH = "step2/sample_images/Pneumothorax_segmentation_module…_202605161949.png"
+IMAGE_PATH = "step2/sample_images/original_3.jpg"
 OUTPUT_DIR = f"step2/sam3_outputs/{Path(IMAGE_PATH).stem}"
-TEXT_PROMPTS = "x-ray,lock,mask,icon"
+TEXT_PROMPTS = "robot,person,cat,dog,clock,calendar,headset,computer,brain"
 MIN_SCORE = 0.5
 MERGE_THRESHOLD = 0.01
 # Size filter: drop boxes too small relative to the image size.
